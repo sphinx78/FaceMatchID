@@ -22,6 +22,7 @@ while True:
     face_net.setInput(blob)
     detections = face_net.forward()
 
+ 
     for i in range(0, detections.shape[2]):
         confidence = detections[0, 0, i, 2]
 
@@ -35,3 +36,12 @@ while True:
             x, y, w, h = startX, startY, endX - startX, endY - startY
 
             face = frame[startY:endY, startX:endX]
+            
+            if face.shape[0] == 0 or face.shape[1] == 0:
+                continue
+
+            face = cv2.resize(face, (256, 256))
+            face = face / 256.0
+            face = np.expand_dims(face, axis=0)
+
+            prediction = model.predict(face, verbose=0)
