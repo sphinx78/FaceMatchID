@@ -58,3 +58,9 @@ while True:
                 frame, label, (x, y-10), 
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2
             )
+
+    cv2.imshow("ID Photo Assistant", frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
