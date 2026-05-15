@@ -45,3 +45,10 @@ while True:
             face = np.expand_dims(face, axis=0)
 
             prediction = model.predict(face, verbose=0)
+
+            if prediction[0][0] > 0.5:
+                label = "Invalid: Movement Detected"
+                color = (0, 0, 255) # Red
+            else:
+                label = "Valid: Perfect for ID"
+                color = (0, 255, 0) #green
