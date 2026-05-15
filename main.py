@@ -51,4 +51,10 @@ while True:
                 color = (0, 0, 255) # Red
             else:
                 label = "Valid: Perfect for ID"
-                color = (0, 255, 0) #green
+                color = (0, 255, 0) # Green
+
+            cv2.rectangle(frame, (x, y), (x+w, y+h), color, 2)
+            cv2.putText(
+                frame, label, (x, y-10), 
+                cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2
+            )
