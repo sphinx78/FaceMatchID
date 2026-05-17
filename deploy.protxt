@@ -66,3 +66,11 @@ layer {
     }
   }
 }
+layer {
+  name: "conv1_bn_h"
+  type: "BatchNorm"
+  bottom: "conv1_h"
+  top: "conv1_h"
+  param {
+    lr_mult: 0.0
+  }
