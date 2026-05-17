@@ -74,8 +74,27 @@ layer {
   param {
     lr_mult: 0.0
   }
-
   param {
     lr_mult: 0.0
+  }
+  param {
+    lr_mult: 0.0
+  }
+}
+layer {
+  name: "conv1_scale_h"
+  type: "Scale"
+  bottom: "conv1_h"
+  top: "conv1_h"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 1.0
+  }
+  scale_param {
+    bias_term: true
   }
 }
