@@ -74,7 +74,8 @@ layer {
   param {
     lr_mult: 0.0
   }
- param {
+
+  param {
     lr_mult: 0.0
   }
-
+}
