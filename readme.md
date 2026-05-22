@@ -30,7 +30,7 @@ python detect.py
 
 - A webcam window named "ID Photo Assistant" will open.
 - Hold still and keep a neutral face to get a "Valid" green box.
-- Press `q` to quit the application..
+- Press `q` to quit the application.
 
 ## How it Works
 The assistant re-purposes a convolutional neural network (CNN) model to monitor the user's face. By passing the real-time webcam feed through OpenCV's DNN module and evaluating the extracted facial crops with the Keras model, the application provides instant feedback on posture and expression suitability.
